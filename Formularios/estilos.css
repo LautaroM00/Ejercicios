@@ -1,0 +1,48 @@
+div{
+    width: 500px;
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+h1{
+    text-align: center;
+    background-color: green;
+    display: block;
+    padding: 10px;
+
+
+}
+
+form{
+    background-color: rgb(212, 226, 212);
+    margin-left: 120px;
+    margin-right: 60px;
+    padding: 10px;
+    padding-top: 1px;
+    display: center;
+}
+
+label{
+    display: block;
+    margin-top: 15px;
+    color: green;
+
+}
+
+input{
+    border-color: green;
+}
+
+span{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: green;
+    background-color: yellow;
+}
+
+body{
+    background-image: url(assets/images.webp);
+    background-size: 425px;
+}

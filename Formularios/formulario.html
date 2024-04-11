@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="estilos.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Plantate un Groot</h1>
+    <div>
+        <form>
+            <label for="nombre">First Name</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+
+            <label for="apellido">Last Name</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+
+            <label for="direccion">Adress</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+
+            <label for="ciudad">City</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+
+
+            <label for="pais">Country</label>
+            <select height="10" required>
+                <option value="argentina">Argentina</option>
+                <option value="angola">Angola</option>
+                <option value="Austria">Austria</option>
+                <option value="australia">Australia</option>
+                <option value="etc">etc...</option>
+            </select>
+
+
+            <label for="zip">Zip</label>
+            <input type="text"id="zip" name="zip" size="4" maxlength="4" required>
+
+
+            <label for="tree_location">Tree Location</label>
+                <select id="tree_location" name="tree_location" required>
+                    <option value="opcion 1">opcion 1</option>
+                    <option value="opcion 2">opcion 2</option>
+                    <option value="opcion 3">opcion 3</option>
+                    <option value="opcion 4">opcion 4</option>
+                    <option value="opcion etc">etc...</option>
+                </select>
+
+
+            <label for="numero_arboles">Number of trees</label>
+            <input type="text" id="numero_arboles" name="numero_arboles" rowspan="3" maxlength="4" size="3" required>
+
+
+            <label for="persona">Person/org Making the Purchase</label>
+            <input type="text" id="persona" name="persona" required>
+
+
+            <label for="proposito">Purpose of the Trees</label>
+            <input type="text" id="proposito" name="proposito" rows="20" required>
+
+
+            <label for="subtotal">Subtotal:</label>
+            <input type="text" id="subtotal" name="subtotal" readonly>
+
+
+            <label for="total">Total (2 per tree + pay/pals 3.5%):</label>
+            <input type="text" id="total" name="total" readonly>
+
+            <span>NOTE: FOR THE DEMO PAYPAL HAS BEN DISABLED ON THIS FORM. PLEASE CLICK
+                THE PAYPAL BUTTON TO CONTINUE TO THE GENERATED PDF
+            </span>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
