@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root{
+    --text-font: #673de6;
+    --title-font: #2f1c6a;
+    --border-font: #d5dfff;
+    --background-color: #f4f5ff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    color:black;
+    text-decoration: none;
+}
+
+section{
+    width: 100vw;
+    height:650px;
+    padding: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ↓↓↓ Inicio div superior ↓↓↓ */
+
+section .title{
+    color: var(--title-font);
+    font-size: xx-large;
+}
+
+/* ↑↑↑ Fin div superior ↑↑↑ */
+
+/* Soy un separador */
+
+/* ↓↓↓ Inicio div medio ↓↓↓ */
+
+section .opinion-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+section .opinion-cards .card{
+    width: calc(1100px/3);
+    height: 450px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+}
+
+section .opinion-cards .card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-font);
+    border-radius: 7px;
+}
+
+section .opinion-cards .card .review{
+    line-height: 24px;
+    padding: 40px 35px 35px 30px;
+    height: 77%;
+    border-bottom: 1px solid var(--border-font);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: large;
+    flex-direction: column;
+}
+
+section .opinion-cards .card .review p{
+    height: 70%;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+
+section .opinion-cards .card .review .read-more{
+    color: var(--text-font);
+    font-weight: 700;
+    font-size: 15px;
+}
+
+section .opinion-cards .card .review:nth-child(1){
+    flex-direction: row;
+    gap: 2px
+}
+
+section .opinion-cards .card .person{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+section .opinion-cards .card .person .name{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 10px;
+    color: var(--title-font);
+}
+
+section .opinion-cards .card .person .name .first-name{
+    color: var(--title-font);
+    font-weight: 700;
+    font-size: large;
+}
+
+section .opinion-cards .card .person .name .last-name{
+    color: var(--title-font);
+    font-size: small;
+}
+
+/* ↑↑↑ Fin div medio ↑↑↑ */
+
+/* Soy un separador */
+
+/* ↓↓↓ Inicio div inferior ↓↓↓ */
+
+section .see-more{
+    color: var(--text-font);
+    border: 2px solid var(--text-font);
+    border-radius: 8px;
+    padding: 10px 55px;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+/* ↑↑↑ Fin div inferior ↑↑↑ */
