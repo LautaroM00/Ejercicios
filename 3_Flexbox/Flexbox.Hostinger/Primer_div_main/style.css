@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    list-style-type: none;
+    border: none;
+    text-decoration: none;
+}
+
+:root{
+    --color-gral: #2f1c6a;
+    --button-offer: #673DE6;
+    --timer: #EBE4FF;
+}
+
+section{
+    padding: 120px 0 0 230px;
+    display: flex;
+}
+
+section .product-offer{
+
+    display: flex;
+    flex-direction: column;
+    color: var(--color-gral)
+}
+
+section .product-offer .title-subtitle{
+    padding:35px 0 0 0;
+    line-height: 40px;
+    width: 450px
+}
+
+section .product-offer .title-subtitle h3{
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+section .product-offer .title-subtitle h1{
+    font-size: 35px;
+    font-weight: 600;
+    width: 360px;
+}
+
+section .product-offer .title-subtitle .percentage{
+    color: var(--button-offer)
+}
+
+section .product-offer .list{
+    padding: 20px 0;
+}
+
+section .product-offer .list ul li{
+    padding: 2px 0;
+    display: flex;
+    justify-content: center left;
+    gap:10px;
+}
+
+section .product-offer .final-offer{
+    display: flex;
+    flex-direction: column;
+}
+
+section .product-offer .final-offer .price{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+section .product-offer .final-offer .plus-month{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+section .product-offer .button-timer{
+    display: flex;
+    margin:25px 0 10px 0;
+    gap: 10px
+}
+
+section .product-offer .button-timer a{
+    background-color: var(--button-offer);
+    color:white;
+    padding: 10px 50px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+section .product-offer .button-timer .timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:140px;
+    height:40px;
+    background-color: var(--timer);
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 13px;
+    word-spacing: -4px; 
+}
+
+section .product-offer .warranty{
+    display: flex;
+    justify-content: center left;
+    gap:5px;
+}
