@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    color:black;
+}
+
+:root{
+    --color-recommended: #2f1c6a;
+    --color-opinion: #1d1e20
+}
+
+.recomendations_container{
+    width: 100vw;
+    height:700px;
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.recomendations .subtitle{
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-recommended)
+}
+
+.recomendations .punctuation{
+    padding: 70px 0 0 0;
+    height:100px;
+    display: flex;
+    align-items: center;
+    gap:95px
+}
+
+/* Trustpilot */
+
+.recomendations .punctuation .trustpilot{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Google */
+
+.recomendations .punctuation .google{
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recomendations .punctuation .google .google_punctuation{
+    padding-top: 13px;
+    display: flex;
+    gap: 5px;
+}
+
+.recomendations .punctuation .google .details{
+    margin-top:19px ;
+}
+
+/* Hostadvice */
+
+.recomendations .punctuation .hostadvice{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recomendations .punctuation .hostadvice .hostadvice_punctuation{
+    padding-top: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.recomendations .punctuation .hostadvice .details{
+    margin-top:18px ;
+}
+
+/* wpbeginner */
+
+.recomendations .punctuation .wpbeginner{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recomendations .punctuation .wpbeginner .wpbeginner_punctuation{
+    padding-top: 9px;
+    display: flex;
+    gap: 5px;
+}
+
+.recomendations .punctuation .wpbeginner .details{
+    margin-top:17px ;
+}
