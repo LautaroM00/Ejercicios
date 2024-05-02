@@ -21,7 +21,10 @@ header{
     padding: 23px 40px 23px 32px;
     width: 100vw;
     height: 90px;
-    box-shadow: 0px 4px 10px 1px rgba(212, 211, 211, 0.466);
+    box-shadow: 0px 4px 13px 1px rgba(212, 211, 211, 0.466);
+    z-index: 1000;
+    background-color: white;
+    position: fixed;
 }
 
 /* ↓↓ Inicio sección izquierda nav ↓↓ */
@@ -50,9 +53,19 @@ header .icon-country .flag{
     height: 16px;
 }
 
+header .icon-country img{
+    width:140px;
+}
+
 /* ↑↑ Fin sección izquierda nav ↑↑ */
 
 /* ↓↓ Inicio sección derecha nav ↓↓ */
+
+header nav .bi{
+    display:none;
+    width:24px;
+    height:24px;
+}
 
 nav .navigator-menu{
     display: flex;
@@ -82,3 +95,36 @@ nav .navigator-menu .navigator-element:nth-child(6){
 }
 
 /* ↑↑ Fin sección derecha nav ↑↑ */
+
+@media screen and (max-width:1120px){
+    header{
+        padding:0 20px 0 0;
+        position: relative;
+        bottom: 0px;
+        height: 62px;
+    }
+
+    header nav .bi{
+        display: flex;
+        justify-items: end;
+    }
+
+
+    header nav .navigator-menu{
+        display: none;
+    }
+
+    header .icon-country .country{
+        display: none;
+    }
+}
+
+@media screen and (max-width:767px){
+    header{
+        height: 55px;
+    }
+
+    header .icon-country img{
+        width:110px;
+    }
+}

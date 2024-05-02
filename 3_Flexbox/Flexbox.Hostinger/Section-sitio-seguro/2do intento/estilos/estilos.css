@@ -1,0 +1,169 @@
+@import url(./accesorios.css);
+@import url(./fuentes.css);
+
+section{
+    background-color:var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding: 60px 15px;
+}
+
+section{
+    display: flex;
+}
+
+/* sección superior */
+
+section .contenedor{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+section .superior .titulo-imagen{
+    display: flex;
+    flex-direction: column;
+    gap:30px
+}
+
+section .superior li{
+    display: flex;
+    gap:10px
+}
+
+section .superior ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+section .superior .img-chica{
+    margin-top: 20px;
+    min-height:191px;
+    min-width:290px;
+    max-height: 500px;
+    max-width: 600px;
+}
+
+section .superior .imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* fin sección superior */
+
+/* sección inferior */
+
+section .inferior{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap:40px;
+}
+
+section .inferior article{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    background-color: var(--bg-color-carta);
+    border-radius: 5px;
+    padding:30px;
+}
+
+section .inferior article div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (min-width:650px){
+    section{
+        padding: 70px 50px;
+    }
+}
+
+@media screen and (min-width:1050px){
+    section{
+        padding: 80px 115px 30px 115px;
+    }
+
+    section .superior h2{
+        font-size: 28px;
+    }
+
+    section .superior ul{
+        font-size: 18px;
+    }
+
+    section .superior .img-chica{
+        min-height:241px;
+        min-width:334px;
+        max-height: 498px;
+        max-width: 688px;
+    }
+
+section .superior ul{
+    gap:20px;
+}
+}
+
+
+@media screen and (min-width:1300px){
+
+    section{
+        align-items: center;
+        justify-content: center;
+        padding: 200px 0 200px;
+    }
+
+    section .contenedor{
+        display: flex;
+        flex-direction: column;
+        max-width: 1128px;
+        gap:40px;
+    }
+
+    section .superior{
+        min-width:456px;
+        min-height: 376px;
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+    }
+
+    section .superior .titulo-imagen{
+        justify-content: space-between;
+        padding-top: 10px;
+        width: 456px;
+        height:376px;
+    }
+
+    section .superior h2{
+        font-size: 36px;
+        letter-spacing: 1px;
+        line-height: 40px;
+    }
+
+    section .superior .img-chica{
+        height: 400px;
+        width: 552px;
+    }
+
+    section .superior ul{
+        font-size: 16px;
+    }
+
+    section .inferior{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap:25px;
+    }
+
+    section .inferior article{
+        width:363px;
+        height:270px;
+        justify-content: space-between;
+    }
+}

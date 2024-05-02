@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    color:#fff;
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 25px;
+}
+
+:root{
+    --bg-color-section-keepsafe: #673DE6;
+    --bg-color-section-keepsafe-card: #5025d1;
+}
+
+.keepsafe{
+    padding:130px 0 200px 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color-section-keepsafe);
+}
+
+.keepsafe .container{
+    width:1150px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.keepsafe .container .upperdiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:138px;
+}
+
+.keepsafe .container .upperdiv .title-li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:20px;
+}
+
+.keepsafe .container .upperdiv .img{
+    width: 552px;
+    height: 400px;
+}
+
+.keepsafe .container .upperdiv .title-li h2{
+    font-size: 36px;
+    line-height: 40px;
+
+    letter-spacing: 1px;
+}
+
+.keepsafe .container .upperdiv .title-li ul li{
+    padding: 10px 10px 10px 0px;
+    display: flex;
+    gap:10px;
+
+}
+
+.keepsafe .container .lowerdiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:25px;
+}
+
+.keepsafe .container .lowerdiv article{
+
+    background-color: var(--bg-color-section-keepsafe-card);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 35px 38px 30px 30px;
+    gap:20px;
+}
+
+.keepsafe .container .lowerdiv article .ks-anchor{
+    display: flex;
+    justify-content: end;
+    height:24px;
+}
+
+/* 
+
+MEDIAQUERYS 
+
+*/
+
+@media only screen and (max-width: 1050px){
+    .keepsafe{
+        height: 2000px;
+    }
+
+    .keepsafe .container{
+        width:100%;
+        height:2000px;
+        align-items: center;
+    }
+
+    .keepsafe .container .upperdiv{
+        flex-direction: column-reverse;
+        gap: 32px;
+    }
+
+    .keepsafe .container .upperdiv .title-li h2{
+        font-size: 28px;
+    }
+
+    .keepsafe .container .upperdiv .title-li ul li{
+        width:640px;
+        padding: 10px 0px 10px 0px;
+    }
+    
+    .keepsafe .container .upperdiv .img{
+        width:688px;
+        height:498px;
+    }
+
+    .keepsafe .container .lowerdiv{
+        flex-direction: column;
+        align-items: center;
+        max-width: 688px;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .keepsafe{
+    }
+
+    .keepsafe .container{
+        padding: 0 30px;
+    }
+}
