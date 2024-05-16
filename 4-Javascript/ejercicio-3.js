@@ -4,6 +4,11 @@
 
 let edad = prompt('Ingrese su edad', '')
 
-if(edad >= 18) alert('Eres mayor de edad') //debe ir en console.log, no leí bien la consigna
+if(edad >= 18){
+    alert('Eres mayor de edad')} //debe ir en console.log, no leí bien la consigna
 
-else alert('Eres menor de edad')
+else{
+    alert('Eres menor de edad')
+}
+
+//Nota 16/5: reordené y agregué corchetes para mejorar la legibilidad

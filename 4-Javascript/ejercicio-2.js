@@ -4,7 +4,8 @@
 
 let salario = prompt('Ingrese su salario mensual', '')
 
-alert(`Su salario anual es: ${salario *= 12}ARS`)
+alert(`Su salario anual es: ${salario * 12}ARS`)
 
 //es recomendable hacer dos variables: salarioAnual y salario para no perder salario y así tenerlo guardado en otra variable
 
+//Nota 16/5: a *= le saque el = para conservar el valor de salario

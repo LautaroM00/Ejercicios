@@ -34,7 +34,7 @@ else{
 
 //La variante corregida queda:
 
-let sueldo = +prompt('Ingrese el sueldo', '')
+/* let sueldo = +prompt('Ingrese el sueldo', '')
 
 let antiguedad = +prompt('Ingrese la antiguedad (en años)', '') //el prompt convierte el valor ingresado a string
 
@@ -44,3 +44,27 @@ if(sueldo < 500)
         else alert(sueldo += sueldo*0.2)
     }
 else (alert(`Sueldo: ${sueldo} ARS`))
+ */
+
+
+//Nota 16/5: agrego debajo una conversión a número aprendida en clase y reestructuro el código para mejorar su legibilidad. También agrego la variable 'sueldoConAumento' donde irá el nuevo sueldo con aumento para conservar el valor de 'sueldo'.
+
+let sueldo = Number(prompt('Ingrese el sueldo', ''))
+
+let antiguedad = Number(prompt('Ingrese la antiguedad (en años)', '')) //el prompt convierte el valor ingresado a string
+
+if(sueldo < 500)
+    {
+
+        let sueldoConAumento
+
+        if (antiguedad < 10){
+            sueldoConAumento = sueldo += sueldo*0.05
+            alert(sueldoConAumento)
+        }
+        else{
+            sueldoConAumento = sueldo + sueldo*0.2
+            alert(sueldoConAumento)
+        }
+    }
+else (alert('Sueldo: ' + sueldo + '$'))
