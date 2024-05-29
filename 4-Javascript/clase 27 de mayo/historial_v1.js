@@ -15,10 +15,10 @@ const HISTORIAL = [
     },
 ]
 
-function renderizarHistorial(){
+function renderizarHistorial(historialRecibido){
     let textoHistorial = 'El historial es:'
 
-    for (let calculo of HISTORIAL){
+    for (let calculo of historialRecibido){
         textoHistorial = textoHistorial + '\n'
         for(let propiedad in calculo){
             textoHistorial = textoHistorial + '\n' + `${propiedad}: ${calculo[propiedad]}`
@@ -28,4 +28,4 @@ function renderizarHistorial(){
     return textoHistorial
 }
 
-alert(renderizarHistorial())
+alert(renderizarHistorial(HISTORIAL))
