@@ -28,4 +28,34 @@ function renderizarHistorial(historialRecibido){
     return textoHistorial
 }
 
+function agregarAlHistorial (elementoHistorial){
+    HISTORIAL.push(elementoHistorial)
+}
+
+function ObtenerHistorial(){
+    return HISTORIAL
+}
+
+agregarAlHistorial({
+    accion: 'CALCULAR',
+    operacion: '-',
+    a: 1,
+    b: 2,
+    resultado: -1
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alert(renderizarHistorial(HISTORIAL))
