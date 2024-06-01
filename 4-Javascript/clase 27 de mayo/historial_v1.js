@@ -1,4 +1,4 @@
-const HISTORIAL = [
+const historial = [
     {
         accion: 'CALCULAR',
         operacion: '+',
@@ -29,11 +29,17 @@ function renderizarHistorial(historialRecibido){
 }
 
 function agregarAlHistorial (elementoHistorial){
-    HISTORIAL.push(elementoHistorial)
+    historial.push(elementoHistorial)
+
+    let objetoString = JSON.stringify(historial)
+
+    localStorage.setItem('historial', objetoString)
 }
 
-function ObtenerHistorial(){
-    return HISTORIAL
+function obtenerHistorial(){
+    let objetoString = localStorage.getItem('historial')
+
+    return JSON.parse(objetoString)
 }
 
 agregarAlHistorial({
@@ -44,18 +50,4 @@ agregarAlHistorial({
     resultado: -1
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-alert(renderizarHistorial(HISTORIAL))
+alert(renderizarHistorial(historial))
