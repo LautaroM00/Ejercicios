@@ -1,0 +1,29 @@
+.bloque-colores{
+    width: 250px;
+    height: 250px;
+}
+
+
+
+
+.color-4{
+    height:35%;
+    border-radius: 10px 10px 0 0;
+}
+
+.color-3{
+    height:28%;
+}
+
+.color-2{
+    height:20%;
+}
+
+.color-1{
+    height:17%;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+

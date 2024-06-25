@@ -1,0 +1,17 @@
+.like-btn{
+    height: 38px;
+    padding: 10px;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.like-btn:hover{
+    cursor: pointer;
+}
+
+.like-btn span{
+    font-size: 14px;
+}
