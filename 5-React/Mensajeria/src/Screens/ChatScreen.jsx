@@ -29,8 +29,15 @@ export const ChatScreen = () => {
         },
         {
             author: 'pepe',
-            text: `
-            `,
+            text: "../../../../assets/iorio.jpg",
+            estado: 'visto',
+            day: 'hoy',
+            hour: '13:17',
+            id: '4'
+        },
+        {
+            author: 'pepe',
+            text: "../../../../assets/gato.png",
             estado: 'visto',
             day: 'hoy',
             hour: '13:17',

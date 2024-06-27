@@ -10,7 +10,7 @@ export const ListaMensajes = ({ lista }) => {
                 let colorFondo
                 let url
                 let imagen
-                const { id, author, text, day, hour, estado} = mensaje
+                let { id, author, text, day, hour, estado} = mensaje
                     if(author === 'yo'){
                         direccion = 'end'
                         colorFondo = "#005c4b"
@@ -18,8 +18,9 @@ export const ListaMensajes = ({ lista }) => {
                     if(estado === 'visto'){
                         url = '../../../../assets/visto.png'
                     }
-                    if(id === '4'){
-                        imagen = <img src={"../../../../assets/gato.png"} style={{width:'170px'}}/>
+                    if(text.startsWith('../')){
+                        imagen = <img src={text} style={{width:'170px'}}/>
+                        text = ''
                     }
                 return(
                 <div key={id} className='contenedor' style={{
