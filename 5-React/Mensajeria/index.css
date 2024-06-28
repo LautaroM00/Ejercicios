@@ -8,17 +8,18 @@
 }
 
 body{
-    background-color: grey;
+    background-color: #808080;
 }
 
 .pantalla{
-    width: 450px;
-    height: 900px;
+    width: 400px;
+    height: 100vh;
     background-image: url(../../assets/iphone.png);
     background-repeat: no-repeat;
     background-size: 900px;
     background-position: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

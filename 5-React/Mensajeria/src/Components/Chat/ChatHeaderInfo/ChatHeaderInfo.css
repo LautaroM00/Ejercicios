@@ -1,0 +1,48 @@
+.header{
+    height:77px;
+    width:360px;
+    padding:10px;
+    background-color: #202D36;
+    border-radius: 40px 35px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:10px;
+}
+
+.fotoPerfil{
+    width: 55px;
+    height:55px;
+    border-radius: 100%;
+}
+
+.header .izquierda{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.header h3{
+    color:white;
+    font-weight: 400;
+}
+
+.header .derecha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px
+}
+
+.header .derecha img{
+    width:20px;
+    display: flex;
+    align-items: center;
+}
+.header .derecha img:hover{
+    cursor: pointer;
+}
+
+.header .derecha img:nth-child(1){
+    width:23px;
+}
