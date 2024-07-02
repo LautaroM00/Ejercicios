@@ -1,5 +1,6 @@
 import React from 'react'
 import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../Components/Chat'
+import { useState } from 'react'
 
 export const ChatScreen = () => {
     const MOOK_MENSAJES = [
@@ -123,13 +124,29 @@ export const ChatScreen = () => {
             id: '15'
         }
     ]
+
+    const [sumatoriaMensajes , addMsj] = useState(MOOK_MENSAJES)
+
+    const agregarMensaje = (mensaje) => {
+        addMsj(
+            [...sumatoriaMensajes,{
+                author: 'yo',
+                text: mensaje,
+                estado: 'visto',
+                day: 'hoy',
+                hour: '13:28',
+                id: sumatoriaMensajes.length + 1
+            }]
+        )
+    }
+
     return (
         <>
             <ChatHeaderInfo />
             <div className='chat'>
-                <ListaMensajes lista={MOOK_MENSAJES}/>
+                <ListaMensajes lista={sumatoriaMensajes}/>
             </div>
-            <MensajeForm />
+            <MensajeForm lista={MOOK_MENSAJES} funcionBoton={agregarMensaje}/>
         </>
     )
 }
