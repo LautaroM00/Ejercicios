@@ -146,7 +146,7 @@ export const ChatScreen = () => {
             <div className='chat'>
                 <ListaMensajes lista={sumatoriaMensajes}/>
             </div>
-            <MensajeForm lista={MOOK_MENSAJES} funcionBoton={agregarMensaje}/>
+            <MensajeForm agregarMensaje={agregarMensaje}/>
         </>
     )
 }

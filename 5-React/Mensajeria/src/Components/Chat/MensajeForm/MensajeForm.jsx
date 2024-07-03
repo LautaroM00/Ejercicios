@@ -1,15 +1,14 @@
 import React from 'react'
 import './MensajeForm.css'
 import enviar from "../../../../iconos/enviar.png"
-import { useState } from 'react'
 
-export const MensajeForm = ({ lista, funcionBoton }) => {
+export const MensajeForm = ({ agregarMensaje }) => {
 
     const handleSubmit = (evento) =>{
         evento.preventDefault()
         let mensajeNuevo = evento.target[0].value
 
-        funcionBoton(mensajeNuevo)
+        agregarMensaje(mensajeNuevo)
 
         evento.target[0].value = ''
     }
