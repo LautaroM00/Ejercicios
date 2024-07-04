@@ -8,9 +8,11 @@ export const MensajeForm = ({ agregarMensaje }) => {
         evento.preventDefault()
         let mensajeNuevo = evento.target[0].value
 
+        if(mensajeNuevo !== ''){
         agregarMensaje(mensajeNuevo)
 
         evento.target[0].value = ''
+        }
     }
 
 

@@ -1,6 +1,8 @@
-.chat{
-    width:360px;
-    height:610px;
+@import url(../phoneScreen.css);
+
+.chat {
+    width: 360px;
+    height: 610px;
     overflow-y: scroll;
 }
 

@@ -1,0 +1,24 @@
+.ChatPreview{
+    padding: 10px;
+    border: 2px solid red;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.thumbnail{
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.medio{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap:6px
+}
+
+.derecha{
+    border: 1px solid red;
+}
