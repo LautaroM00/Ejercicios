@@ -4,7 +4,7 @@ import "./Mensaje.css"
 export const Mensaje = ({ lista, colorFondo }) => {
     let url
     let imagen
-    let { id, text, day, hour, estado} = lista
+    let { text, day, hour, estado} = lista
     if(estado === 'visto'){
         url = '../../../../assets/visto.png'
     }

@@ -2,10 +2,11 @@
 
 .ChatsListScreen{
     width:362px;
-    height:745px;
-    border-radius: 37px;
+    height:741px;
+    border-radius: 38px;
     position: relative;
-    top:6px;
+    top: 7px;
+    left: 1px;
     background-color: #121B22;
     overflow: hidden;
 }

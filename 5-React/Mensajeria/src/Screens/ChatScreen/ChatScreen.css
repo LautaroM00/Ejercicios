@@ -1,5 +1,11 @@
 @import url(../phoneScreen.css);
 
+.ChatScreen {
+    border-radius: 37px;
+    position: relative;
+
+}
+
 .chat {
     width: 360px;
     height: 610px;

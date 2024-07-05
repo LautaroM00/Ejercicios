@@ -4,7 +4,18 @@ import './ChatsPreviewHeader.css'
 const ChatsPreviewHeader = () => {
     return (
         <div className='ChatsPreviewHeader'>
-            header
+            <div className={'arriba'}>
+                <h2>WhatsApp</h2>
+                <div>
+                </div>
+            </div>
+            <div className={'abajo'}>
+                <div className={'selectorChat'}>
+                    <span>
+                        CHATS
+                    </span>
+                </div>
+            </div>
         </div>
     )
 }

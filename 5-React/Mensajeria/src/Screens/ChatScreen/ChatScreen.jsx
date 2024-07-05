@@ -5,19 +5,19 @@ import './ChatScreen.css'
 
 import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../../Components/Chat'
 
-import { MOOK_MENSAJES } from '..'
 
 
 
+export const ChatScreen = ({ MOOK_DATA }) => {
 
-export const ChatScreen = () => {
+    const { mensajes, nombre, thumbnail } = MOOK_DATA
 
-    const [sumatoriaMensajes , addMsj] = useState(MOOK_MENSAJES)
+    const [sumatoriaMensajes , addMsj] = useState(mensajes)
 
     const agregarMensaje = (mensaje) => {
         addMsj(
             [...sumatoriaMensajes,{
-                author: 'yo',
+                author: 'Tú',
                 text: mensaje,
                 estado: 'visto',
                 day: 'hoy',
@@ -29,11 +29,13 @@ export const ChatScreen = () => {
 
     return (
         <div className="pantalla">
-            <ChatHeaderInfo />
-            <div className='chat'>
-                <ListaMensajes lista={sumatoriaMensajes}/>
+            <div className='ChatScreen'>
+                <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail}/>
+                <div className='chat'>
+                    <ListaMensajes lista={sumatoriaMensajes}/>
+                </div>
+                <MensajeForm agregarMensaje={agregarMensaje}/>
             </div>
-            <MensajeForm agregarMensaje={agregarMensaje}/>
         </div>
     )
 }

@@ -5,13 +5,14 @@ import camaraIcono from "../../../../iconos/camara.png"
 import telefono from "../../../../iconos/telefono.png"
 import tresPuntos from "../../../../iconos/puntos.png"
 
-export const ChatHeaderInfo = () => {
+export const ChatHeaderInfo = ({ nombre, thumbnail}) => {
+    
     return (
         <div className='header'>
             <div className='izquierda'>
-                <img src={messi} className='fotoPerfil' alt='foto-perfil'/>
+                <img src={thumbnail} className='fotoPerfil' alt='foto-perfil'/>
                 <h3>
-                    Messi
+                    {nombre}
                 </h3>
             </div>
             <div className='derecha'>
