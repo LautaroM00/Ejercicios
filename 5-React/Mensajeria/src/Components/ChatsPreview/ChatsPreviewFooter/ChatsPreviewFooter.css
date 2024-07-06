@@ -1,4 +1,6 @@
 .ChatsPreviewFooter{
-    border: 2px solid green;
-    height: 10%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

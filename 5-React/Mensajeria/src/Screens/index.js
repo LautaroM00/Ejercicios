@@ -265,8 +265,6 @@ const guardarMensajeLS = (id, nuevoMensaje) => {
 
     const contactosLS = traerContactosLS()
 
-    console.log(nuevoMensaje)
-
     contactosLS[id].mensajes.push(nuevoMensaje)
 
     let contactosLS_string = JSON.stringify(contactosLS)

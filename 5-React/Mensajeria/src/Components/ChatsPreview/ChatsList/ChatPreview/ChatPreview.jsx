@@ -12,6 +12,8 @@ const ChatPreview = ({ datos }) => {
 
     let autorMensaje        = mensajes[mensajes.length - 1].author
 
+    let fuente = ''
+
     if (ultimoMensaje.length > 13) {
         ultimoMensaje = ultimoMensaje.slice(0, 13) + '...'
     }
@@ -19,6 +21,7 @@ const ChatPreview = ({ datos }) => {
     if(ultimoMensaje.startsWith('../')){
         ultimoMensaje = '✨Sticker'
         colorSticker = '#79889280'
+        fuente = 'italic'
     }
 
     return (
@@ -31,7 +34,7 @@ const ChatPreview = ({ datos }) => {
                         </span>
                         <div>
                             {`${autorMensaje}: `}
-                            <span style={{color: colorSticker,fontStyle:'italic'}}>{ultimoMensaje}</span>
+                            <span style={{color: colorSticker,fontStyle: fuente}}>{ultimoMensaje}</span>
                         </div>
                     </div>
                     <span className='derecha'>
