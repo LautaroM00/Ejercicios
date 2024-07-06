@@ -9,16 +9,15 @@ function App() {
 
     const contactos = traerContactosLS()
 
-
-
-    const [ datosMessi, datosCharly, datosDuki ] = contactos
-
     return (
         <Routes>
             <Route path="/" element={<ChatsListScreen />}></Route>
-            <Route path="chat/1" element={<ChatScreen MOOK_DATA={datosMessi}/>}></Route>
-            <Route path="chat/2" element={<ChatScreen MOOK_DATA={datosCharly}/>}></Route>
-            <Route path="chat/3" element={<ChatScreen MOOK_DATA={datosDuki}/>}></Route>
+            {contactos.map((datosContacto, index) => {
+                let ruta = datosContacto.id
+                return(
+                    <Route path={`chat/${ruta}`} element={<ChatScreen MOOK_DATA={datosContacto}/>} key={index}></Route>
+                )
+            })}
         </Routes>
     )
 }
