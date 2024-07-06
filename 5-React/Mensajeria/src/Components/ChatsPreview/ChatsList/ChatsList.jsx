@@ -1,10 +1,13 @@
 import React from 'react'
 import './ChatsList.css'
-import { ChatPreview, contactos } from '../index'
+import { ChatPreview, traerContactosLS } from '../index'
 import { NavLink } from 'react-router-dom'
 import { useParams, Link } from 'react-router-dom'
 
 const ChatsList = () => {
+
+    const contactos = traerContactosLS()
+
     return (
         <div className='ChatsList'>
             {

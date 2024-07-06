@@ -2,10 +2,14 @@ import React from "react"
 import { ChatScreen } from "./Screens"
 import { Route, Routes } from "react-router-dom"
 import ChatsListScreen from "./Screens/ChatsListScreen/ChatsListScreen"
-import { contactos } from "./Screens"
+import { traerContactosLS } from "./Screens"
 
 
 function App() {
+
+    const contactos = traerContactosLS()
+
+
 
     const [ datosMessi, datosCharly, datosDuki ] = contactos
 
