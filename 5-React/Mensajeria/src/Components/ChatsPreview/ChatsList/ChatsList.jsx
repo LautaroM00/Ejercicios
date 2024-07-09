@@ -11,13 +11,13 @@ const ChatsList = () => {
     return (
         <div className='ChatsList'>
             {
-                contactos.map((chat => {
+                contactos.map((chat, index) => {
                     return(
-                        <Link key={chat.id} to={'chat/' + chat.id}>
+                        <Link key={index} to={'chat/' + chat.id}>
                             <ChatPreview datos={chat}  />
                         </Link>
                 )
-                }))
+                })
             }
         </div>
     )
