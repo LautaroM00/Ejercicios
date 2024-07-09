@@ -272,4 +272,4 @@ const guardarMensajeLS = (id, nuevoMensaje) => {
     localStorage.setItem('contactos', contactosLS_string)
 }
 
-export { ChatScreen, traerContactosLS, guardarMensajeLS }
+export { ChatScreen, traerContactosLS, guardarMensajeLS, contactos }

@@ -14,12 +14,7 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<ChatsListScreen />} />
-            {contactos.map((datosContacto, index) => {
-                let ruta = datosContacto.id
-                return(
-                    <Route path={`chat/${ruta}`} element={<ChatScreen MOOK_DATA={datosContacto}/>} key={index} />
-                )
-            })}
+            <Route path='chat/:id' element={<ChatScreen />} />
         </Routes>
     )
 }

@@ -1,16 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 import './ChatScreen.css'
 
 import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../../Components/Chat'
 
-import { guardarMensajeLS, traerContactosLS } from '../index'
+import { guardarMensajeLS, traerContactosLS, contactos } from '../index'
 
 
 
 
-export const ChatScreen = ({ MOOK_DATA }) => {
+export const ChatScreen = () => {
+
+    let urlParams = useParams()
+    let idParams = urlParams.id
+    const MOOK_DATA = contactos.find((contacto) => contacto.id === Number(idParams))
 
     const { mensajes, nombre, thumbnail, id } = MOOK_DATA
 
@@ -18,7 +23,13 @@ export const ChatScreen = ({ MOOK_DATA }) => {
 
     const contactosLS = traerContactosLS()
 
-    const mensajesLS = contactosLS[id - 1].mensajes
+    const buscarMensajes = contactosLS.find((contacto) => {
+        return(contacto.nombre === nombre)
+    })
+
+    const mensajesLS = buscarMensajes.mensajes
+
+/*     const mensajesLS = contactosLS[id - 1].mensajes */
 
     const agregarMensaje = (mensaje) => {
         addMsj(
