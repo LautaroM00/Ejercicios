@@ -1,0 +1,11 @@
+
+
+.producto{
+    border:1px solid green;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
