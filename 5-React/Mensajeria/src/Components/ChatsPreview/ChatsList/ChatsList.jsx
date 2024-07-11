@@ -1,8 +1,7 @@
 import React from 'react'
 import './ChatsList.css'
 import { ChatPreview, traerContactosLS } from '../index'
-import { NavLink } from 'react-router-dom'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const ChatsList = () => {
 

@@ -4,12 +4,7 @@ import { Route, Routes } from "react-router-dom"
 import { ChatScreen } from "./Screens"
 import ChatsListScreen from "./Screens/ChatsListScreen/ChatsListScreen"
 
-import { traerContactosLS } from "./Screens"
-
-
 function App() {
-
-    const contactos = traerContactosLS()
 
     return (
         <Routes>

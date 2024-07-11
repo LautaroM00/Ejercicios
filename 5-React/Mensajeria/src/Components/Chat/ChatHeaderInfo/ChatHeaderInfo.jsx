@@ -4,12 +4,14 @@ import messi from "../../../../assets/messi.jpg"
 import camaraIcono from "../../../../iconos/camara.png"
 import telefono from "../../../../iconos/telefono.png"
 import tresPuntos from "../../../../iconos/puntos.png"
+import { IoArrowBack } from "react-icons/io5";
 
 export const ChatHeaderInfo = ({ nombre, thumbnail}) => {
     
     return (
         <div className='header'>
             <div className='izquierda'>
+                <IoArrowBack />
                 <img src={thumbnail} className='fotoPerfil' alt='foto-perfil'/>
                 <h3>
                     {nombre}

@@ -14,6 +14,7 @@ import { guardarMensajeLS, traerContactosLS, contactos } from '../index'
 export const ChatScreen = () => {
 
     let urlParams = useParams()
+
     let idParams = urlParams.id
     const MOOK_DATA = contactos.find((contacto) => contacto.id === Number(idParams))
 
