@@ -9,7 +9,7 @@ const ChatsListScreen = () => {
             <div className={'ChatsListScreen'}>
                 <ChatsPreviewHeader />
                 <ChatsList />
-                <ChatsPreviewFooter />
+{/*                 <ChatsPreviewFooter /> */}
             </div>
         </div>
     )

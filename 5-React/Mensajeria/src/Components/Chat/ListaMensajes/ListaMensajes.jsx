@@ -5,18 +5,9 @@ import './ListaMensajes.css'
 export const ListaMensajes = ({ lista }) => {
     return (
         <>
-            {lista.map((mensaje) => {
-                let direccion
-                let colorFondo
-                const { author, id, } = mensaje
-                    if(author === 'Tú: '){
-                        direccion = 'end'
-                        colorFondo = "#005c4b"
-                    }
+            {lista.map((mensaje, index) => {
                 return(
-                <div className='contenedor' style={{ justifyContent: direccion }} key={id}>
-                    <Mensaje lista={mensaje} key={id} colorFondo={colorFondo}/>
-                </div>
+                    <Mensaje lista={mensaje} key={index}/>
                 )
             })}
         </>

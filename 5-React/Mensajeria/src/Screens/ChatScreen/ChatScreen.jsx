@@ -11,7 +11,7 @@ import { fetchContactos } from '../index'
 
 
 export const ChatScreen = () => {
-    
+
     let urlParams = useParams()
     let idParams = urlParams.id
 
@@ -44,7 +44,7 @@ export const ChatScreen = () => {
                         addMsj(contactos[Number(idParams) - 1].mensajes)
                     })
             }
-            , 100500
+            , 5000
         )
     },
         []
@@ -60,7 +60,7 @@ export const ChatScreen = () => {
     const agregarMensaje = (mensaje) => {
         addMsj(
             [...sumatoriaMensajes, {
-                author: 'Tú',
+                author: 'Tú: ',
                 text: mensaje,
                 estado: 'visto',
                 day: 'hoy',
@@ -73,12 +73,12 @@ export const ChatScreen = () => {
         <div className="pantalla">
             {isLoading
                 ? <div className='ChatScreen'>
-                <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} />
-                <div className='chat'>
-                    <ListaMensajes lista={sumatoriaMensajes} />
+                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} />
+                    <div className='chatLoading'>
+                        <ListaMensajes lista={sumatoriaMensajes} />
+                    </div>
+                    <MensajeForm isLoading={true}/>
                 </div>
-                <MensajeForm agregarMensaje={agregarMensaje} />
-            </div>
                 : <div className='ChatScreen'>
                     <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} />
                     <div className='chat'>

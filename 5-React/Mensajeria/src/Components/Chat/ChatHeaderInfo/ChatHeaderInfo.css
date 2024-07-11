@@ -19,7 +19,9 @@
 .header .izquierda{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap:10px;
+    color:white;
 }
 
 .header h3{
