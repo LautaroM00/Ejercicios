@@ -3,7 +3,7 @@ import './ChatPreview.css'
 
 const ChatPreview = ({ datos }) => {
 
-    const { nombre, thumbnail, ultima_conexion, mensajes } = datos
+    const { nombre, thumbnail, mensajes } = datos
 
     let colorSticker
 
@@ -33,7 +33,7 @@ const ChatPreview = ({ datos }) => {
                             {nombre}
                         </span>
                         <div>
-                            {`${autorMensaje}: `}
+                            {`${autorMensaje}`}
                             <span style={{color: colorSticker,fontStyle: fuente}}>{ultimoMensaje}</span>
                         </div>
                     </div>

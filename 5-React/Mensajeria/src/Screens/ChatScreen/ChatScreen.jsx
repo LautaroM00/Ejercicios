@@ -1,40 +1,65 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import './ChatScreen.css'
 
 import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../../Components/Chat'
 
-import { guardarMensajeLS, traerContactosLS, contactos } from '../index'
+import { fetchContactos } from '../index'
 
 
 
 
 export const ChatScreen = () => {
-
+    
     let urlParams = useParams()
-
     let idParams = urlParams.id
-    const MOOK_DATA = contactos.find((contacto) => contacto.id === Number(idParams))
 
+    const [isLoading, setLoading] = useState(true)
+    const [contactos, setContactos] = useState([
+        {
+            nombre: '',
+            mensajes: [
+                {
+                    author: "",
+                    text: "",
+                    estado: "",
+                    day: "",
+                    hour: "",
+                    id: ""
+                }
+            ],
+            thumbnail: '',
+            id: Number(idParams)
+        }
+    ])
+
+    useEffect(() => {
+        setTimeout(
+            () => {
+                fetchContactos()
+                    .then((contactos) => {
+                        setContactos(contactos)
+                        setLoading(false)
+                        addMsj(contactos[Number(idParams) - 1].mensajes)
+                    })
+            }
+            , 100500
+        )
+    },
+        []
+    )
+
+    const MOOK_DATA = contactos.find((contacto) => contacto.id === Number(idParams))
     const { mensajes, nombre, thumbnail, id } = MOOK_DATA
 
-    const [sumatoriaMensajes , addMsj] = useState(mensajes)
+    const [sumatoriaMensajes, addMsj] = useState(mensajes)
 
-    const contactosLS = traerContactosLS()
-
-    const buscarMensajes = contactosLS.find((contacto) => {
-        return(contacto.nombre === nombre)
-    })
-
-    const mensajesLS = buscarMensajes.mensajes
-
-/*     const mensajesLS = contactosLS[id - 1].mensajes */
+    /*     const mensajesLS = contactosLS[id - 1].mensajes */
 
     const agregarMensaje = (mensaje) => {
         addMsj(
-            [...sumatoriaMensajes,{
+            [...sumatoriaMensajes, {
                 author: 'Tú',
                 text: mensaje,
                 estado: 'visto',
@@ -43,26 +68,25 @@ export const ChatScreen = () => {
                 id: sumatoriaMensajes.length + 1
             }]
         )
-
-        guardarMensajeLS(id - 1, {
-            author: 'Tú',
-            text: mensaje,
-            estado: 'visto',
-            day: 'hoy',
-            hour: '13:28',
-            id: mensajesLS.length + 1
-        })
     }
-
     return (
         <div className="pantalla">
-            <div className='ChatScreen'>
-                <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail}/>
+            {isLoading
+                ? <div className='ChatScreen'>
+                <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} />
                 <div className='chat'>
-                    <ListaMensajes lista={mensajesLS}/>
+                    <ListaMensajes lista={sumatoriaMensajes} />
                 </div>
-                <MensajeForm agregarMensaje={agregarMensaje}/>
+                <MensajeForm agregarMensaje={agregarMensaje} />
             </div>
+                : <div className='ChatScreen'>
+                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} />
+                    <div className='chat'>
+                        <ListaMensajes lista={sumatoriaMensajes} />
+                    </div>
+                    <MensajeForm agregarMensaje={agregarMensaje} />
+                </div>
+            }
         </div>
     )
 }

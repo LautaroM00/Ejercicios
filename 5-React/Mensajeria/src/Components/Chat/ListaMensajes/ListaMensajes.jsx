@@ -9,7 +9,7 @@ export const ListaMensajes = ({ lista }) => {
                 let direccion
                 let colorFondo
                 const { author, id, } = mensaje
-                    if(author === 'Tú'){
+                    if(author === 'Tú: '){
                         direccion = 'end'
                         colorFondo = "#005c4b"
                     }
