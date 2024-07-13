@@ -1,0 +1,14 @@
+.productos{
+    border: 1px solid red;
+    width:500px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    gap:500px;
+}
+
+.boton{
+    position: fixed;
+}
