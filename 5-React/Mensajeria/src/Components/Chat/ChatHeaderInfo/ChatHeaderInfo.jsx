@@ -7,7 +7,7 @@ import lupita from "../../../../iconos/lupita.png"
 import { HiArrowSmLeft } from "react-icons/hi";
 import { Link } from 'react-router-dom'
 
-export const ChatHeaderInfo = ({ nombre, thumbnail }) => {
+export const ChatHeaderInfo = ({ nombre, thumbnail, filtroMensajes, setFiltroMensajes }) => {
 
     const [lupitaIsActive, setLupitaIsPressed] = useState(false)
     const [colorLupita, setColorLupita] = useState('')
@@ -22,6 +22,11 @@ export const ChatHeaderInfo = ({ nombre, thumbnail }) => {
         lupitaIsActive ?
             setColorLupita('') :
             setColorLupita('#152027')
+    }
+
+    const handleFiltro = (e) => {
+        setFiltroMensajes(e.target.value)
+        console.log(filtroMensajes)
     }
 
     return (
@@ -46,12 +51,14 @@ export const ChatHeaderInfo = ({ nombre, thumbnail }) => {
                     <button
                         className='boton'
                         onClick={handleClickLupita}
-                        style={{ backgroundColor: colorLupita, borderRadius: '50%' }}
-                    >
+                        style={{ backgroundColor: colorLupita, borderRadius: '50%' }}>
                         <img src={lupita} alt="icono-lupita" style={{ width: '21px', height: '21px' }} />
                     </button>
                 </div>
-            </div >
+            </div>
+            <div className='filtro' style={{ display: lupitaIsActive ? '' : 'none' }}>
+                <input onChange={handleFiltro}></input>
+            </div>
         </>
     )
 }

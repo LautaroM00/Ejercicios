@@ -15,6 +15,7 @@ export const ChatScreen = () => {
     let urlParams = useParams()
     let idParams = urlParams.id
 
+    const [filtroMensajes, setFiltroMensajes] = useState('hola')
     const [isLoading, setLoading] = useState(true)
     const [contactos, setContactos] = useState([
         {
@@ -40,19 +41,21 @@ export const ChatScreen = () => {
                 fetchContactos()
                     .then((contactos) => {
                         setContactos(contactos)
+                        const mensajesContacto = contactos[Number(idParams) - 1].mensajes
+                        addMsj(mensajesContacto)
                         setLoading(false)
-                        addMsj(contactos[Number(idParams) - 1].mensajes)
                     })
             }
             , 1000
         )
     },
-        []
+        [filtroMensajes]
     )
+
+    console.log('render')
 
     const MOOK_DATA = contactos.find((contacto) => contacto.id === Number(idParams))
     const { mensajes, nombre, thumbnail, id } = MOOK_DATA
-
     const [sumatoriaMensajes, addMsj] = useState(mensajes)
 
     /*     const mensajesLS = contactosLS[id - 1].mensajes */
@@ -73,14 +76,14 @@ export const ChatScreen = () => {
         <div className="pantalla">
             {isLoading
                 ? <div className='ChatScreen'>
-                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} />
+                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} filtroMensajes={filtroMensajes} setFiltroMensajes={setFiltroMensajes} isLoading={true}/>
                     <div className='chatLoading'>
-                        <ListaMensajes lista={sumatoriaMensajes} />
+                        <ListaMensajes lista={sumatoriaMensajes} isLoading={true}/>
                     </div>
                     <MensajeForm isLoading={true}/>
                 </div>
                 : <div className='ChatScreen'>
-                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} />
+                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} filtroMensajes={filtroMensajes} setFiltroMensajes={setFiltroMensajes}/>
                     <div className='chat'>
                         <ListaMensajes lista={sumatoriaMensajes} />
                     </div>
