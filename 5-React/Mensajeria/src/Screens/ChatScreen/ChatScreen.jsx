@@ -44,7 +44,7 @@ export const ChatScreen = () => {
                         addMsj(contactos[Number(idParams) - 1].mensajes)
                     })
             }
-            , 5000
+            , 1000
         )
     },
         []
