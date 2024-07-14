@@ -57,16 +57,21 @@ export const ChatScreen = () => {
                 return textoMensaje.includes(filtroMensajes)
             })
             console.clear()
-            console.log(`Coincidencias encontradas :`)
-            sumatoriaMensajes.forEach((mensaje) => {
-                mensajesFiltrados.forEach((mensajeFiltro) => {
-                    if(mensaje.id === mensajeFiltro.id){
-                        const mensajeResaltado = mensaje.text.replace(filtroMensajes, `|${filtroMensajes}|`)
-                        console.log(`       Mensaje n° ${mensaje.id} : ${mensajeResaltado}`)
-                        console.log()
-                    }
+            if(mensajesFiltrados.length !== 0){
+                console.log(`Coincidencias encontradas :`)
+                sumatoriaMensajes.forEach((mensaje) => {
+                    mensajesFiltrados.forEach((mensajeFiltro) => {
+                        if(mensaje.id === mensajeFiltro.id){
+                            const mensajeResaltado = mensaje.text.replace(filtroMensajes, `|${filtroMensajes}|`)
+                            console.log(`       Mensaje n° ${mensaje.id} : ${mensajeResaltado}`)
+                        }
+                    })
                 })
-            })
+            }else{
+                console.log('No se encontraron coincidencias')
+            }
+
+
         }
         if(!filtroMensajes){
             console.clear()
