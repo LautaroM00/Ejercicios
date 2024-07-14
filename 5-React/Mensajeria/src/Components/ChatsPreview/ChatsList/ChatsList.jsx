@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { fetchContactos } from '../../../Screens'
 import { defaultChatPreview } from './loading.js'
 
-const ChatsList = () => {
+const ChatsList = ({ textoFiltro }) => {
 
     const [contactos, setContactos] = useState([])
     const [isLoading, setLoading] = useState(true)
@@ -23,6 +23,10 @@ const ChatsList = () => {
         }
     )
 
+    const contactosFiltrados = contactos.filter((contacto) => {
+        return contacto.nombre.toLowerCase().includes(textoFiltro)
+    }) 
+
     return (
         <div className='ChatsList'>
             {
@@ -32,13 +36,21 @@ const ChatsList = () => {
                         <ChatPreview datos={defaultChatPreview[0]} />
                         <ChatPreview datos={defaultChatPreview[0]} />
                     </> :
-                    contactos.map((chat, index) => {
-                        return (
-                            <Link key={index} to={'chat/' + chat.id}>
-                                <ChatPreview datos={chat} />
-                            </Link>
-                        )
-                    })
+                    textoFiltro ?
+                            contactosFiltrados.map((contacto, index) => {
+                                return (
+                                    <Link key={index} to={'chat/' + contacto.id}>
+                                        <ChatPreview datos={contacto} />
+                                    </Link>
+                                )
+                            }):
+                        contactos.map((contacto, index) => {
+                            return (
+                                <Link key={index} to={'chat/' + contacto.id}>
+                                    <ChatPreview datos={contacto} />
+                                </Link>
+                            )
+                        })
             }
         </div>
     )

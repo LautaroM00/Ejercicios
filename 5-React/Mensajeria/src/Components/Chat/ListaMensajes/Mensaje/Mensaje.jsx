@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Mensaje.css"
-import { ProgressSpinner } from 'primereact/progressspinner'
 
 export const Mensaje = ({ lista }) => {
     let url
@@ -21,25 +20,20 @@ export const Mensaje = ({ lista }) => {
         } */
     return (
         <>
-            {(id === '') ?
-                <div className='contenedor' style={{ justifyContent: 'center',alignContent:'center' }} key={id}>
-                    <ProgressSpinner />
-                </div> :
-                <div className='contenedor' style={{ justifyContent: direccion }} key={id}>
-                    <div className='mensaje' style={{ backgroundColor: colorFondo }}>
-                        <p className='texto'>
-                            {text}
-                        </p>
-                        {imagen}
-                        <div className='contenedorInferior'>
-                            <span className='timeSince'>
-                                {`${day} ${hour}`}
-                            </span>
-                            <img src={url} style={{ width: '20px' }} />
-                        </div>
+            <div className='contenedor' style={{ justifyContent: direccion }} key={id}>
+                <div className='mensaje' style={{ backgroundColor: colorFondo }}>
+                    <p className='texto'>
+                        {text}
+                    </p>
+                    {imagen}
+                    <div className='contenedorInferior'>
+                        <span className='timeSince'>
+                            {`${day} ${hour}`}
+                        </span>
+                        <img src={url} style={{ width: '20px' }} />
                     </div>
                 </div>
-            }
+            </div>
         </>
     )
 }

@@ -2,12 +2,11 @@ import React, { useState } from 'react'
 import "./ChatHeaderInfo.css"
 import camaraIcono from "../../../../iconos/camara.png"
 import telefono from "../../../../iconos/telefono.png"
-import tresPuntos from "../../../../iconos/puntos.png"
 import lupita from "../../../../iconos/lupita.png"
 import { HiArrowSmLeft } from "react-icons/hi";
 import { Link } from 'react-router-dom'
 
-export const ChatHeaderInfo = ({ nombre, thumbnail, filtroMensajes, setFiltroMensajes }) => {
+export const ChatHeaderInfo = ({ nombre, thumbnail, setFiltroMensajes }) => {
 
     const [lupitaIsActive, setLupitaIsPressed] = useState(false)
     const [colorLupita, setColorLupita] = useState('')
@@ -18,6 +17,9 @@ export const ChatHeaderInfo = ({ nombre, thumbnail, filtroMensajes, setFiltroMen
     }
 
     const handleClickLupita = () => {
+        if(lupitaIsActive){
+            setFiltroMensajes('')
+        }
         setLupitaIsPressed(!lupitaIsActive)
         lupitaIsActive ?
             setColorLupita('') :
@@ -26,7 +28,6 @@ export const ChatHeaderInfo = ({ nombre, thumbnail, filtroMensajes, setFiltroMen
 
     const handleFiltro = (e) => {
         setFiltroMensajes(e.target.value)
-        console.log(filtroMensajes)
     }
 
     return (

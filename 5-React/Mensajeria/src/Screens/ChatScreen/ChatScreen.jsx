@@ -15,7 +15,8 @@ export const ChatScreen = () => {
     let urlParams = useParams()
     let idParams = urlParams.id
 
-    const [filtroMensajes, setFiltroMensajes] = useState('hola')
+    const [sumatoriaMensajes, addMsj] = useState('')
+    const [filtroMensajes, setFiltroMensajes] = useState('')
     const [isLoading, setLoading] = useState(true)
     const [contactos, setContactos] = useState([
         {
@@ -34,29 +35,49 @@ export const ChatScreen = () => {
             id: Number(idParams)
         }
     ])
-
     useEffect(() => {
-        setTimeout(
-            () => {
-                fetchContactos()
-                    .then((contactos) => {
-                        setContactos(contactos)
-                        const mensajesContacto = contactos[Number(idParams) - 1].mensajes
-                        addMsj(mensajesContacto)
-                        setLoading(false)
-                    })
-            }
-            , 1000
-        )
+        if (isLoading) {
+            setTimeout(
+                () => {
+                    fetchContactos()
+                        .then((contactos) => {
+                            setContactos(contactos)
+                            const mensajesContacto = contactos[Number(idParams) - 1].mensajes
+                            addMsj(mensajesContacto)
+                            setLoading(false)
+                        })
+                    console.log('dentro del timeout')
+                }
+                , 1000
+            )
+        }
+        if (filtroMensajes && sumatoriaMensajes) {
+            const mensajesFiltrados = sumatoriaMensajes.filter((mensaje) => {
+                const textoMensaje = mensaje.text.toLowerCase()
+                return textoMensaje.includes(filtroMensajes)
+            })
+            console.clear()
+            console.log(`Coincidencias encontradas :`)
+            sumatoriaMensajes.forEach((mensaje) => {
+                mensajesFiltrados.forEach((mensajeFiltro) => {
+                    if(mensaje.id === mensajeFiltro.id){
+                        const mensajeResaltado = mensaje.text.replace(filtroMensajes, `|${filtroMensajes}|`)
+                        console.log(`       Mensaje n° ${mensaje.id} : ${mensajeResaltado}`)
+                        console.log()
+                    }
+                })
+            })
+        }
+        if(!filtroMensajes){
+            console.clear()
+        }
     },
         [filtroMensajes]
     )
 
-    console.log('render')
-
     const MOOK_DATA = contactos.find((contacto) => contacto.id === Number(idParams))
-    const { mensajes, nombre, thumbnail, id } = MOOK_DATA
-    const [sumatoriaMensajes, addMsj] = useState(mensajes)
+    const { nombre, thumbnail, id } = MOOK_DATA
+
 
     /*     const mensajesLS = contactosLS[id - 1].mensajes */
 
@@ -76,16 +97,16 @@ export const ChatScreen = () => {
         <div className="pantalla">
             {isLoading
                 ? <div className='ChatScreen'>
-                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} filtroMensajes={filtroMensajes} setFiltroMensajes={setFiltroMensajes} isLoading={true}/>
+                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} filtroMensajes={filtroMensajes} setFiltroMensajes={setFiltroMensajes} isLoading={true} />
                     <div className='chatLoading'>
-                        <ListaMensajes lista={sumatoriaMensajes} isLoading={true}/>
+                        <ListaMensajes lista={[]} isLoading={true} />
                     </div>
-                    <MensajeForm isLoading={true}/>
+                    <MensajeForm isLoading={true} />
                 </div>
                 : <div className='ChatScreen'>
-                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} filtroMensajes={filtroMensajes} setFiltroMensajes={setFiltroMensajes}/>
+                    <ChatHeaderInfo nombre={nombre} thumbnail={thumbnail} filtroMensajes={filtroMensajes} setFiltroMensajes={setFiltroMensajes} />
                     <div className='chat'>
-                        <ListaMensajes lista={sumatoriaMensajes} />
+                        <ListaMensajes lista={sumatoriaMensajes} isLoading={false} />
                     </div>
                     <MensajeForm agregarMensaje={agregarMensaje} />
                 </div>

@@ -32,3 +32,31 @@
     width:30%;
     padding: 10px;
 }
+
+.ChatsPreviewHeader .contenedorBotonInput{
+    display: flex;
+    align-items: center;
+    gap:10px
+}
+
+.ChatsPreviewHeader .boton{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.ChatsPreviewHeader .boton:hover{
+    cursor: pointer;
+}
+
+.ChatsPreviewHeader .input{
+    width: 150px;
+    background-color: #284a63;
+    border: none;
+    border-radius: 15px;
+    border: 1px solid rgba(231, 208, 208, 0.171);
+    box-shadow: 0 0 5px 1px rgb(22, 21, 21);
+    padding: 3px 10px;
+    color:rgb(199, 197, 197);
+}

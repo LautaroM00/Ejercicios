@@ -76,6 +76,7 @@
 }
 
 .filtro input{
+    width:120px;
     background-color: #284a63;
     border: none;
     border-radius: 15px;
