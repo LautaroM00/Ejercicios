@@ -63,7 +63,7 @@ export const ChatScreen = () => {
                     mensajesFiltrados.forEach((mensajeFiltro) => {
                         if(mensaje.id === mensajeFiltro.id){
                             const mensajeResaltado = mensaje.text.replace(filtroMensajes, `|${filtroMensajes}|`)
-                            console.log(`       Mensaje n° ${mensaje.id} : ${mensajeResaltado}`)
+                            console.log(`       Mensaje n°${mensaje.id}: ${mensajeResaltado}`)
                         }
                     })
                 })
